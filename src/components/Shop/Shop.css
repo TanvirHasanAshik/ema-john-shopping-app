@@ -10,8 +10,9 @@
     padding: 120px 82px 0px 104px;
 }
 
-.cart {
+.cart-container {
     background: rgba(255, 153, 0, 0.3);
+    position: sticky;
 }
 
 .cart-data {

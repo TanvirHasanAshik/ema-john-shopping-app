@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { addToLocalStorage, getLocalStorage } from '../../utilities/fakedb';
+import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
 const Shop = () => {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState({});
 
     useEffect(() => {
         fetch('products.json')
@@ -11,11 +13,19 @@ const Shop = () => {
             .then(data => setProducts(data))
     }, []);
 
-    const handleAddToCart = (product) => {
-        const newCart = [...cart, product];
-        setCart(newCart);
+    const handleAddToCart = (id) => {
+        addToLocalStorage(id);
+        handleGetData();
     }
-
+    const handleGetData = () => {
+        const getCart = getLocalStorage();
+        if (getCart) {
+            setCart(getCart);
+        }
+    }
+    useEffect(() => {
+        handleGetData();
+    }, [])
     return (
         <div className="shop-container">
             <div className="product-container">
@@ -27,11 +37,8 @@ const Shop = () => {
                     ></Product>)
                 }
             </div>
-            <div className="cart">
-                <h4 style={{ textAlign: 'center' }}>Order Summary</h4>
-                <div className="cart-data">
-                    <p>Selected Item: {cart.length}</p>
-                </div>
+            <div className="cart-container">
+                <Cart cart={cart}></Cart>
             </div>
         </div >
     );

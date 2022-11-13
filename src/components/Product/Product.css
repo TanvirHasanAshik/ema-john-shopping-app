@@ -1,7 +1,7 @@
 .single-product {
     width: 300px;
     height: 508px;
-    border: 1px solid #95A0A7;
+    border: 1px solid rgb(238, 236, 236);
     border-radius: 8px;
     position: relative;
 }
@@ -44,7 +44,7 @@
     margin-top: 13px;
     background-color: #FFE0B3;
     padding: 12px;
-    border: 1px solid #95A0A7;
+    border: 1px solid #dadbdb;
     border-radius: 0px 0px 8px 8px
 }
 
