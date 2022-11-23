@@ -7,7 +7,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 45px;
-    padding: 120px 82px 0px 104px;
+    margin: 80px 40px;
+
+    /* padding: 120px 82px 0px 104px; */
 }
 
 .cart-container {
@@ -17,5 +19,19 @@
 .cart-data {
     margin-top: 50px;
     margin-left: 23px;
+
+}
+
+.btn-brand {
+    background-color: #FF9900;
+    border: 0px;
+    border-radius: 4px;
+    color: #fff;
+    height: 48px;
+    width: 232px;
+    font-weight: 400px;
+    font-size: 17px;
+    cursor: pointer;
+
 
 }

@@ -1,4 +1,7 @@
+import { faMoneyCheck } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useProducts } from '../../hooks/useProducts';
 import { getLocalStorage, removeSingleProduct } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
@@ -14,7 +17,6 @@ const Orders = () => {
         if (getCart) {
             setCart(getCart);
         }
-
     }, []);
 
     const handleRemoveItem = (product) => {
@@ -46,7 +48,12 @@ const Orders = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}>
+                    <Link to='/inventory'>
+                        <button className="btn-brand">Proceed Check Out <FontAwesomeIcon icon={faMoneyCheck}></FontAwesomeIcon>
+                        </button>
+                    </Link>
+                </Cart>
             </div>
         </div >
     );
