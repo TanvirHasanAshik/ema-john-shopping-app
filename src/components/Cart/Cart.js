@@ -17,11 +17,10 @@ const Cart = (props) => {
 
     let total = 0;
     let shipping = 0;
-    let tax = 0;
+    let tax;
 
     for (const cartId in cart) {
         const cartPd = products.find(product => product.id === cartId);
-        console.log(cartPd ? cartPd : 0);
         total = total + cartPd?.price * cart[cartId];
     }
     if (total >= 1000) {

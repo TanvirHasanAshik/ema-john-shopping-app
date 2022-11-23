@@ -23,6 +23,15 @@ const getLocalStorage = () => {
     return parseGetData;
 }
 
-export { addToLocalStorage, getLocalStorage }
+/* Remove single item from localStorage Database */
+const removeSingleProduct = (product) => {
+    const getData = localStorage.getItem('shopping-cart');
+    const parseGetData = JSON.parse(getData);
+    const productId = product.id;
+    delete parseGetData[productId];
+    console.log(parseGetData)
+    localStorage.setItem('shopping-cart', JSON.stringify(parseGetData));
+}
+export { addToLocalStorage, getLocalStorage, removeSingleProduct }
 
 
