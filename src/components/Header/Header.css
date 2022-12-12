@@ -20,3 +20,20 @@
 .header a:hover {
     color: orange;
 }
+
+.sign-out {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: goldenrod;
+    font-size: 15px;
+    font-weight: bold;
+    color: #1C2B35;
+}
+
+.sign-out:hover {
+    cursor: pointer;
+    background-color: #1C2B35;
+    color: goldenrod;
+    border: 1px solid goldenrod;
+}
