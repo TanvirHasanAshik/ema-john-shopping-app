@@ -63,6 +63,8 @@ const SignUp = () => {
                     <p style={{ color: 'red' }}>{error}</p>
 
                     <input className="submit-btn" type="submit" value="Sign Up" />
+
+                    <p className="new-account">Already have an account? <Link to='/login'>please login</Link></p>
                 </div>
 
             </form >

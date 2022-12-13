@@ -49,7 +49,7 @@ const Orders = () => {
             </div>
             <div className="cart-container">
                 <Cart cart={cart}>
-                    <Link to='/inventory'>
+                    <Link to='/shipment'>
                         <button className="btn-brand">Proceed Check Out <FontAwesomeIcon icon={faMoneyCheck}></FontAwesomeIcon>
                         </button>
                     </Link>
