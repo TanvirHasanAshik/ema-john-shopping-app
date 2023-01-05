@@ -12,6 +12,19 @@
     /* padding: 120px 82px 0px 104px; */
 }
 
+.pagination button {
+    border: 1px solid orange;
+    padding: 10px;
+    margin: 2px;
+    background-color: #fff;
+}
+
+
+.pagination button:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+
 .cart-container {
     background: rgba(255, 153, 0, 0.3);
 }

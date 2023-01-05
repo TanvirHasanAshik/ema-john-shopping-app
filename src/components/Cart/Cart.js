@@ -10,7 +10,7 @@ const Cart = (props) => {
     /* load data from fake db */
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('products.json')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -18,10 +18,13 @@ const Cart = (props) => {
     let total = 0;
     let shipping = 0;
     let tax;
-
+    console.log(products)
+    console.log(cart)
     for (const cartId in cart) {
-        const cartPd = products.find(product => product.id === cartId);
+        console.log(cartId)
+        const cartPd = products.find(product => product._id === cartId);
         total = total + cartPd?.price * cart[cartId];
+
     }
     if (total >= 1000) {
         shipping = 0;

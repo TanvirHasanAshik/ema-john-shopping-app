@@ -29,7 +29,7 @@ const Orders = () => {
 
     const newProducts = products.filter(product => {
         for (const item in cart) {
-            if (item === product.id) {
+            if (item === product._id) {
                 product.quantity = cart[item];
                 return product;
             }
@@ -42,7 +42,7 @@ const Orders = () => {
                 {
                     newProducts.map(product => <ReviewItem
                         product={product}
-                        key={product.id}
+                        key={product._id}
                         handleRemoveItem={handleRemoveItem}
                     ></ReviewItem>)
                 }
